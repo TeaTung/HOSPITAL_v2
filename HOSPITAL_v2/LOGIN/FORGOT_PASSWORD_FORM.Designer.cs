@@ -36,6 +36,9 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnResend = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
             // 
             // gunaLineTextBox1
@@ -46,7 +49,7 @@
             this.gunaLineTextBox1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.gunaLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLineTextBox1.Location = new System.Drawing.Point(149, 39);
+            this.gunaLineTextBox1.Location = new System.Drawing.Point(166, 69);
             this.gunaLineTextBox1.Name = "gunaLineTextBox1";
             this.gunaLineTextBox1.PasswordChar = '\0';
             this.gunaLineTextBox1.SelectedText = "";
@@ -59,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(79, 40);
+            this.label1.Location = new System.Drawing.Point(96, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 30);
             this.label1.TabIndex = 1;
@@ -70,7 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(26, 98);
+            this.label2.Location = new System.Drawing.Point(43, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 30);
             this.label2.TabIndex = 2;
@@ -84,7 +87,7 @@
             this.gunaLineTextBox3.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.gunaLineTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaLineTextBox3.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLineTextBox3.Location = new System.Drawing.Point(149, 97);
+            this.gunaLineTextBox3.Location = new System.Drawing.Point(166, 127);
             this.gunaLineTextBox3.Name = "gunaLineTextBox3";
             this.gunaLineTextBox3.PasswordChar = '\0';
             this.gunaLineTextBox3.SelectedText = "";
@@ -97,10 +100,10 @@
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(482, 157);
+            this.guna2Button1.Location = new System.Drawing.Point(442, 188);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(117, 45);
@@ -116,12 +119,44 @@
             this.guna2Elipse2.BorderRadius = 14;
             this.guna2Elipse2.TargetControl = this;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Indigo;
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 32);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Account recovery";
+            // 
+            // btnResend
+            // 
+            this.btnResend.CheckedState.Parent = this.btnResend;
+            this.btnResend.CustomImages.Parent = this.btnResend;
+            this.btnResend.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnResend.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btnResend.ForeColor = System.Drawing.Color.White;
+            this.btnResend.HoverState.Parent = this.btnResend;
+            this.btnResend.Location = new System.Drawing.Point(308, 188);
+            this.btnResend.Name = "btnResend";
+            this.btnResend.ShadowDecoration.Parent = this.btnResend;
+            this.btnResend.Size = new System.Drawing.Size(117, 45);
+            this.btnResend.TabIndex = 9;
+            this.btnResend.Text = "Send code";
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.TargetControl = this.btnResend;
+            // 
             // FORGOT_PASSWORD_FORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(611, 214);
+            this.ClientSize = new System.Drawing.Size(614, 245);
+            this.Controls.Add(this.btnResend);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.gunaLineTextBox3);
             this.Controls.Add(this.label2);
@@ -144,5 +179,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button btnResend;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
     }
 }
