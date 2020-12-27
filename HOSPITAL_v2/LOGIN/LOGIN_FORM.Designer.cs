@@ -33,9 +33,11 @@
             this.tbPasswork = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbForgot = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbSignUp = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUserName
@@ -82,6 +84,7 @@
             this.lbForgot.Size = new System.Drawing.Size(152, 24);
             this.lbForgot.TabIndex = 2;
             this.lbForgot.Text = "Forgot Password";
+            this.lbForgot.Click += new System.EventHandler(this.lbForgot_Click);
             this.lbForgot.MouseEnter += new System.EventHandler(this.lbForgot_MouseEnter);
             this.lbForgot.MouseLeave += new System.EventHandler(this.lbForgot_MouseLeave);
             // 
@@ -106,18 +109,19 @@
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "Login";
             // 
-            // label1
+            // lbSignUp
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(595, 525);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sign Up ";
+            this.lbSignUp.AutoSize = true;
+            this.lbSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.lbSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbSignUp.ForeColor = System.Drawing.Color.Indigo;
+            this.lbSignUp.Location = new System.Drawing.Point(595, 525);
+            this.lbSignUp.Name = "lbSignUp";
+            this.lbSignUp.Size = new System.Drawing.Size(82, 24);
+            this.lbSignUp.TabIndex = 4;
+            this.lbSignUp.Text = "Sign Up ";
+            this.lbSignUp.Click += new System.EventHandler(this.lbSignUp_Click);
             // 
             // guna2DragControl1
             // 
@@ -128,20 +132,36 @@
             this.guna2Elipse1.BorderRadius = 14;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::HOSPITAL_v2.Properties.Resources.close;
+            this.pictureBox1.Location = new System.Drawing.Point(1214, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // LOGIN_FORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::HOSPITAL_v2.Properties.Resources.LOGIN_FORM;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbSignUp);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.lbForgot);
             this.Controls.Add(this.tbPasswork);
             this.Controls.Add(this.tbUserName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LOGIN_FORM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LOGIN_FORM_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +173,10 @@
         private Guna.UI.WinForms.GunaLineTextBox tbPasswork;
         private System.Windows.Forms.Label lbForgot;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbSignUp;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

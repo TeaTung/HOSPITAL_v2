@@ -33,29 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\asus\Documents\Guna_UI_v2.0.0.6-20201129T081300Z-001\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\asus\Documents\Guna_UI_v2.0.0.6-20201129T081300Z-001\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
+      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,33 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data layer\HospitalEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HospitalEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data layer\HospitalEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HospitalEntity.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Doctor\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doctor\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\uCon\uConPatientInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Doctor\uCon\uConPatientInfo.Designer.cs">
-      <DependentUpon>uConPatientInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM.cs">
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM.Designer.cs">
-      <DependentUpon>FORGOT_PASSWORD_FORM.cs</DependentUpon>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.Designer.cs">
+      <DependentUpon>FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.Designer.cs">
+      <DependentUpon>FORGOT_PASSWORD_FORM_RESET_CODE.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN\LOGIN_FORM.cs">
       <SubType>Form</SubType>
@@ -101,37 +82,69 @@
     <Compile Include="LOGIN\LOGIN_FORM.Designer.cs">
       <DependentUpon>LOGIN_FORM.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_EMAIL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_EMAIL.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_EMAIL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_OTHER.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RECEPTIONIST\RECEPTIONIST_FORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RECEPTIONIST\RECEPTIONIST_FORM.Designer.cs">
+      <DependentUpon>RECEPTIONIST_FORM.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Doctor\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\uCon\uConPatientInfo.resx">
-      <DependentUpon>uConPatientInfo.cs</DependentUpon>
+    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.resx">
+      <DependentUpon>FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM.resx">
-      <DependentUpon>FORGOT_PASSWORD_FORM.cs</DependentUpon>
+    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.resx">
+      <DependentUpon>FORGOT_PASSWORD_FORM_RESET_CODE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN\LOGIN_FORM.resx">
       <DependentUpon>LOGIN_FORM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_EMAIL.resx">
+      <DependentUpon>SIGN_UP_FORM_EMAIL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.resx">
+      <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.resx">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.resx">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_OTHER.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EntityDeploy Include="Data layer\HospitalEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HospitalEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data layer\HospitalEntity.edmx.diagram">
-      <DependentUpon>HospitalEntity.edmx</DependentUpon>
-    </None>
+    <EmbeddedResource Include="RECEPTIONIST\RECEPTIONIST_FORM.resx">
+      <DependentUpon>RECEPTIONIST_FORM.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,15 +163,11 @@
     <None Include="Resources\LOGIN FORM.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data layer\HospitalEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HospitalEntity.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="NewFile1.txt" />
+    <None Include="Resources\Logo%402x1.png" />
+    <None Include="Resources\LOGO%402x.png" />
+    <None Include="Resources\close.png" />
     <None Include="Resources\send.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

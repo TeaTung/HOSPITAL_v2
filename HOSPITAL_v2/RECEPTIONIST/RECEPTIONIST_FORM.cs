@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HOSPITAL_v2.LOGIN
+namespace HOSPITAL_v2.RECEPTIONIST
 {
-    public partial class FORGOT_PASSWORD_FORM : Form
+    public partial class RECEPTIONIST_FORM : Form
     {
-        public FORGOT_PASSWORD_FORM()
+        public RECEPTIONIST_FORM()
         {
             InitializeComponent();
         }
