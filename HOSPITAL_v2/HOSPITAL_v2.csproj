@@ -37,10 +37,10 @@
       <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
+      <HintPath>C:\Users\asus\Documents\Guna_UI_v2.0.0.6-20201129T081300Z-001\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
+      <HintPath>C:\Users\asus\Documents\Guna_UI_v2.0.0.6-20201129T081300Z-001\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
