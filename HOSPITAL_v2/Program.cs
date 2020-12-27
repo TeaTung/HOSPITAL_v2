@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ProjectAAA;
 namespace HOSPITAL_v2
 {
     static class Program
@@ -16,7 +16,7 @@ namespace HOSPITAL_v2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LOGIN_FORM());
+            Application.Run(new ProjectAAA.Form1());
         }
     }
 }

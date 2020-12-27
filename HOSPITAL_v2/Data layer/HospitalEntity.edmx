@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LTTQModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT_AUTHORIZED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DOCTOR_ID" Type="int" />
+          <Property Name="CONTENT" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="ADMIN_ID" />
+          </Key>
+          <Property Name="ADMIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE_OF_BIRTH" Type="datetime" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_DATE" Type="datetime" />
+          <Property Name="DOCTOR_ID" Type="int" />
+          <Property Name="PATIENT_ID" Type="int" />
+          <Property Name="CONTENT" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPOINTMENT_TIME" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="DIRECTOR">
+          <Key>
+            <PropertyRef Name="DIRECTOR_ID" />
+          </Key>
+          <Property Name="DIRECTOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DOCTOR">
+          <Key>
+            <PropertyRef Name="DOCTOR_ID" />
+          </Key>
+          <Property Name="DOCTOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SPECIALIST" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROOM" Type="nvarchar" MaxLength="10" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="DATE_OF_BIRTH" Type="datetime" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="ACCOUNT_TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MEDICINE">
+          <Key>
+            <PropertyRef Name="MEDICINE_ID" />
+          </Key>
+          <Property Name="MEDICINE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRICE" Type="int" />
+        </EntityType>
+        <EntityType Name="PATIENT">
+          <Key>
+            <PropertyRef Name="PATIENT_ID" />
+          </Key>
+          <Property Name="PATIENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="BORN_PLACE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SEX" Type="bit" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="INSURANCE_ID" Type="int" />
+          <Property Name="SICK_BED_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="PATIENT_QUEUE">
+          <Key>
+            <PropertyRef Name="QUEUE_ID" />
+          </Key>
+          <Property Name="QUEUE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DOCTOR_ID" Type="int" />
+          <Property Name="PATIENT_ID" Type="int" />
+          <Property Name="CONTENT" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="PATIENT_SICK_BED">
+          <Key>
+            <PropertyRef Name="SICK_BED_ID" />
+            <PropertyRef Name="PATIENT_ID" />
+          </Key>
+          <Property Name="SICK_BED_ID" Type="int" Nullable="false" />
+          <Property Name="PATIENT_ID" Type="int" Nullable="false" />
+          <Property Name="DATE_START" Type="datetime" />
+          <Property Name="DATE_END" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RECEPTIONIST">
+          <Key>
+            <PropertyRef Name="RECEPTIONIST_ID" />
+          </Key>
+          <Property Name="RECEPTIONIST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RELATIONSHIP">
+          <Key>
+            <PropertyRef Name="RELATIONSHIP_ID" />
+          </Key>
+          <Property Name="RELATIONSHIP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PATIENT_ID" Type="int" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SICK_BED">
+          <Key>
+            <PropertyRef Name="SICK_BED_ID" />
+          </Key>
+          <Property Name="SICK_BED_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROOM" Type="nvarchar" MaxLength="10" />
+          <Property Name="IS_AVAILABLE" Type="bit" />
+        </EntityType>
+        <EntityType Name="TREATMENT_PLAN">
+          <Key>
+            <PropertyRef Name="TREATMENT_PLAN_ID" />
+          </Key>
+          <Property Name="TREATMENT_PLAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TREATMENT_PLAN_DATE" Type="smalldatetime" />
+          <Property Name="MEDICAL_INSTRUCTION" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DOCTOR_ID" Type="int" />
+          <Property Name="PATIENT_ID" Type="int" />
+          <Property Name="SYMPTOM" Type="nvarchar" MaxLength="1000" />
+          <Property Name="HEALTH_STATUS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IS_PAID" Type="bit" />
+          <Property Name="PRICE" Type="int" />
+        </EntityType>
+        <EntityType Name="TREATMENT_PLAN_MEDICINE">
+          <Key>
+            <PropertyRef Name="MEDICINE_ID" />
+            <PropertyRef Name="TREATMENT_PLAN_ID" />
+          </Key>
+          <Property Name="MEDICINE_ID" Type="int" Nullable="false" />
+          <Property Name="TREATMENT_PLAN_ID" Type="int" Nullable="false" />
+          <Property Name="QUANTITY" Type="int" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_STAFF">
+          <Key>
+            <PropertyRef Name="WAREHOUSE_STAFF_ID" />
+          </Key>
+          <Property Name="WAREHOUSE_STAFF_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE_OF_BIRTH" Type="datetime" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <Association Name="FK__ACCOUNT_A__DOCTO__0D7A0286">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="ACCOUNT_AUTHORIZED" Type="Self.ACCOUNT_AUTHORIZED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_AUTHORIZED">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APPOINTME__DOCTO__73BA3083">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APPOINTME__PATIE__74AE54BC">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_Q__DOCTO__02084FDA">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="PATIENT_QUEUE" Type="Self.PATIENT_QUEUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_QUEUE">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_Q__PATIE__02FC7413">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="PATIENT_QUEUE" Type="Self.PATIENT_QUEUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_QUEUE">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_S__PATIE__7F2BE32F">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="1" />
+          <End Role="PATIENT_SICK_BED" Type="Self.PATIENT_SICK_BED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_SICK_BED">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_S__SICK___7E37BEF6">
+          <End Role="SICK_BED" Type="Self.SICK_BED" Multiplicity="1" />
+          <End Role="PATIENT_SICK_BED" Type="Self.PATIENT_SICK_BED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SICK_BED">
+              <PropertyRef Name="SICK_BED_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_SICK_BED">
+              <PropertyRef Name="SICK_BED_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RELATIONS__PATIE__778AC167">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="RELATIONSHIP" Type="Self.RELATIONSHIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="RELATIONSHIP">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__DOCTO__6C190EBB">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__MEDIC__7A672E12">
+          <End Role="MEDICINE" Type="Self.MEDICINE" Multiplicity="1" />
+          <End Role="TREATMENT_PLAN_MEDICINE" Type="Self.TREATMENT_PLAN_MEDICINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICINE">
+              <PropertyRef Name="MEDICINE_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN_MEDICINE">
+              <PropertyRef Name="MEDICINE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__PATIE__6D0D32F4">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__TREAT__7B5B524B">
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="1" />
+          <End Role="TREATMENT_PLAN_MEDICINE" Type="Self.TREATMENT_PLAN_MEDICINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TREATMENT_PLAN">
+              <PropertyRef Name="TREATMENT_PLAN_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN_MEDICINE">
+              <PropertyRef Name="TREATMENT_PLAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LTTQModelStoreContainer">
+          <EntitySet Name="ACCOUNT_AUTHORIZED" EntityType="Self.ACCOUNT_AUTHORIZED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT" EntityType="Self.APPOINTMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIRECTOR" EntityType="Self.DIRECTOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCTOR" EntityType="Self.DOCTOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICINE" EntityType="Self.MEDICINE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PATIENT" EntityType="Self.PATIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PATIENT_QUEUE" EntityType="Self.PATIENT_QUEUE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PATIENT_SICK_BED" EntityType="Self.PATIENT_SICK_BED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECEPTIONIST" EntityType="Self.RECEPTIONIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RELATIONSHIP" EntityType="Self.RELATIONSHIP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SICK_BED" EntityType="Self.SICK_BED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TREATMENT_PLAN" EntityType="Self.TREATMENT_PLAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TREATMENT_PLAN_MEDICINE" EntityType="Self.TREATMENT_PLAN_MEDICINE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WAREHOUSE_STAFF" EntityType="Self.WAREHOUSE_STAFF" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ACCOUNT_A__DOCTO__0D7A0286" Association="Self.FK__ACCOUNT_A__DOCTO__0D7A0286">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="ACCOUNT_AUTHORIZED" EntitySet="ACCOUNT_AUTHORIZED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APPOINTME__DOCTO__73BA3083" Association="Self.FK__APPOINTME__DOCTO__73BA3083">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APPOINTME__PATIE__74AE54BC" Association="Self.FK__APPOINTME__PATIE__74AE54BC">
+            <End Role="PATIENT" EntitySet="PATIENT" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_Q__DOCTO__02084FDA" Association="Self.FK__PATIENT_Q__DOCTO__02084FDA">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="PATIENT_QUEUE" EntitySet="PATIENT_QUEUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_Q__PATIE__02FC7413" Association="Self.FK__PATIENT_Q__PATIE__02FC7413">
+            <End Role="PATIENT" EntitySet="PATIENT" />
+            <End Role="PATIENT_QUEUE" EntitySet="PATIENT_QUEUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_S__PATIE__7F2BE32F" Association="Self.FK__PATIENT_S__PATIE__7F2BE32F">
+            <End Role="PATIENT" EntitySet="PATIENT" />
+            <End Role="PATIENT_SICK_BED" EntitySet="PATIENT_SICK_BED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_S__SICK___7E37BEF6" Association="Self.FK__PATIENT_S__SICK___7E37BEF6">
+            <End Role="SICK_BED" EntitySet="SICK_BED" />
+            <End Role="PATIENT_SICK_BED" EntitySet="PATIENT_SICK_BED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RELATIONS__PATIE__778AC167" Association="Self.FK__RELATIONS__PATIE__778AC167">
+            <End Role="PATIENT" EntitySet="PATIENT" />
+            <End Role="RELATIONSHIP" EntitySet="RELATIONSHIP" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__DOCTO__6C190EBB" Association="Self.FK__TREATMENT__DOCTO__6C190EBB">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__MEDIC__7A672E12" Association="Self.FK__TREATMENT__MEDIC__7A672E12">
+            <End Role="MEDICINE" EntitySet="MEDICINE" />
+            <End Role="TREATMENT_PLAN_MEDICINE" EntitySet="TREATMENT_PLAN_MEDICINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__PATIE__6D0D32F4" Association="Self.FK__TREATMENT__PATIE__6D0D32F4">
+            <End Role="PATIENT" EntitySet="PATIENT" />
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__TREAT__7B5B524B" Association="Self.FK__TREATMENT__TREAT__7B5B524B">
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+            <End Role="TREATMENT_PLAN_MEDICINE" EntitySet="TREATMENT_PLAN_MEDICINE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LTTQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT_AUTHORIZED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DOCTOR_ID" Type="Int32" />
+          <Property Name="CONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK__ACCOUNT_A__DOCTO__0D7A0286" FromRole="ACCOUNT_AUTHORIZED" ToRole="DOCTOR" />
+        </EntityType>
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="ADMIN_ID" />
+          </Key>
+          <Property Name="ADMIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DOCTOR_ID" Type="Int32" />
+          <Property Name="PATIENT_ID" Type="Int32" />
+          <Property Name="CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPOINTMENT_TIME" Type="Time" Precision="7" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK__APPOINTME__DOCTO__73BA3083" FromRole="APPOINTMENT" ToRole="DOCTOR" />
+          <NavigationProperty Name="PATIENT" Relationship="Self.FK__APPOINTME__PATIE__74AE54BC" FromRole="APPOINTMENT" ToRole="PATIENT" />
+        </EntityType>
+        <EntityType Name="DIRECTOR">
+          <Key>
+            <PropertyRef Name="DIRECTOR_ID" />
+          </Key>
+          <Property Name="DIRECTOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DOCTOR">
+          <Key>
+            <PropertyRef Name="DOCTOR_ID" />
+          </Key>
+          <Property Name="DOCTOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SPECIALIST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROOM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" />
+          <NavigationProperty Name="ACCOUNT_AUTHORIZED" Relationship="Self.FK__ACCOUNT_A__DOCTO__0D7A0286" FromRole="DOCTOR" ToRole="ACCOUNT_AUTHORIZED" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK__APPOINTME__DOCTO__73BA3083" FromRole="DOCTOR" ToRole="APPOINTMENT" />
+          <NavigationProperty Name="PATIENT_QUEUE" Relationship="Self.FK__PATIENT_Q__DOCTO__02084FDA" FromRole="DOCTOR" ToRole="PATIENT_QUEUE" />
+          <NavigationProperty Name="TREATMENT_PLAN" Relationship="Self.FK__TREATMENT__DOCTO__6C190EBB" FromRole="DOCTOR" ToRole="TREATMENT_PLAN" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MEDICINE">
+          <Key>
+            <PropertyRef Name="MEDICINE_ID" />
+          </Key>
+          <Property Name="MEDICINE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Int32" />
+          <NavigationProperty Name="TREATMENT_PLAN_MEDICINE" Relationship="Self.FK__TREATMENT__MEDIC__7A672E12" FromRole="MEDICINE" ToRole="TREATMENT_PLAN_MEDICINE" />
+        </EntityType>
+        <EntityType Name="PATIENT">
+          <Key>
+            <PropertyRef Name="PATIENT_ID" />
+          </Key>
+          <Property Name="PATIENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BORN_PLACE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SEX" Type="Boolean" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="INSURANCE_ID" Type="Int32" />
+          <Property Name="SICK_BED_ID" Type="Int32" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK__APPOINTME__PATIE__74AE54BC" FromRole="PATIENT" ToRole="APPOINTMENT" />
+          <NavigationProperty Name="PATIENT_QUEUE" Relationship="Self.FK__PATIENT_Q__PATIE__02FC7413" FromRole="PATIENT" ToRole="PATIENT_QUEUE" />
+          <NavigationProperty Name="PATIENT_SICK_BED" Relationship="Self.FK__PATIENT_S__PATIE__7F2BE32F" FromRole="PATIENT" ToRole="PATIENT_SICK_BED" />
+          <NavigationProperty Name="RELATIONSHIPs" Relationship="Self.FK__RELATIONS__PATIE__778AC167" FromRole="PATIENT" ToRole="RELATIONSHIP" />
+          <NavigationProperty Name="TREATMENT_PLAN" Relationship="Self.FK__TREATMENT__PATIE__6D0D32F4" FromRole="PATIENT" ToRole="TREATMENT_PLAN" />
+        </EntityType>
+        <EntityType Name="PATIENT_QUEUE">
+          <Key>
+            <PropertyRef Name="QUEUE_ID" />
+          </Key>
+          <Property Name="QUEUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DOCTOR_ID" Type="Int32" />
+          <Property Name="PATIENT_ID" Type="Int32" />
+          <Property Name="CONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK__PATIENT_Q__DOCTO__02084FDA" FromRole="PATIENT_QUEUE" ToRole="DOCTOR" />
+          <NavigationProperty Name="PATIENT" Relationship="Self.FK__PATIENT_Q__PATIE__02FC7413" FromRole="PATIENT_QUEUE" ToRole="PATIENT" />
+        </EntityType>
+        <EntityType Name="PATIENT_SICK_BED">
+          <Key>
+            <PropertyRef Name="SICK_BED_ID" />
+            <PropertyRef Name="PATIENT_ID" />
+          </Key>
+          <Property Name="SICK_BED_ID" Type="Int32" Nullable="false" />
+          <Property Name="PATIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="DATE_START" Type="DateTime" Precision="3" />
+          <Property Name="DATE_END" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PATIENT" Relationship="Self.FK__PATIENT_S__PATIE__7F2BE32F" FromRole="PATIENT_SICK_BED" ToRole="PATIENT" />
+          <NavigationProperty Name="SICK_BED" Relationship="Self.FK__PATIENT_S__SICK___7E37BEF6" FromRole="PATIENT_SICK_BED" ToRole="SICK_BED" />
+        </EntityType>
+        <EntityType Name="RECEPTIONIST">
+          <Key>
+            <PropertyRef Name="RECEPTIONIST_ID" />
+          </Key>
+          <Property Name="RECEPTIONIST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RELATIONSHIP">
+          <Key>
+            <PropertyRef Name="RELATIONSHIP_ID" />
+          </Key>
+          <Property Name="RELATIONSHIP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PATIENT_ID" Type="Int32" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PATIENT" Relationship="Self.FK__RELATIONS__PATIE__778AC167" FromRole="RELATIONSHIP" ToRole="PATIENT" />
+        </EntityType>
+        <EntityType Name="SICK_BED">
+          <Key>
+            <PropertyRef Name="SICK_BED_ID" />
+          </Key>
+          <Property Name="SICK_BED_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROOM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IS_AVAILABLE" Type="Boolean" />
+          <NavigationProperty Name="PATIENT_SICK_BED" Relationship="Self.FK__PATIENT_S__SICK___7E37BEF6" FromRole="SICK_BED" ToRole="PATIENT_SICK_BED" />
+        </EntityType>
+        <EntityType Name="TREATMENT_PLAN">
+          <Key>
+            <PropertyRef Name="TREATMENT_PLAN_ID" />
+          </Key>
+          <Property Name="TREATMENT_PLAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TREATMENT_PLAN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MEDICAL_INSTRUCTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DOCTOR_ID" Type="Int32" />
+          <Property Name="PATIENT_ID" Type="Int32" />
+          <Property Name="SYMPTOM" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="HEALTH_STATUS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IS_PAID" Type="Boolean" />
+          <Property Name="PRICE" Type="Int32" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK__TREATMENT__DOCTO__6C190EBB" FromRole="TREATMENT_PLAN" ToRole="DOCTOR" />
+          <NavigationProperty Name="PATIENT" Relationship="Self.FK__TREATMENT__PATIE__6D0D32F4" FromRole="TREATMENT_PLAN" ToRole="PATIENT" />
+          <NavigationProperty Name="TREATMENT_PLAN_MEDICINE" Relationship="Self.FK__TREATMENT__TREAT__7B5B524B" FromRole="TREATMENT_PLAN" ToRole="TREATMENT_PLAN_MEDICINE" />
+        </EntityType>
+        <EntityType Name="TREATMENT_PLAN_MEDICINE">
+          <Key>
+            <PropertyRef Name="MEDICINE_ID" />
+            <PropertyRef Name="TREATMENT_PLAN_ID" />
+          </Key>
+          <Property Name="MEDICINE_ID" Type="Int32" Nullable="false" />
+          <Property Name="TREATMENT_PLAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="QUANTITY" Type="Int32" />
+          <NavigationProperty Name="MEDICINE" Relationship="Self.FK__TREATMENT__MEDIC__7A672E12" FromRole="TREATMENT_PLAN_MEDICINE" ToRole="MEDICINE" />
+          <NavigationProperty Name="TREATMENT_PLAN" Relationship="Self.FK__TREATMENT__TREAT__7B5B524B" FromRole="TREATMENT_PLAN_MEDICINE" ToRole="TREATMENT_PLAN" />
+        </EntityType>
+        <EntityType Name="WAREHOUSE_STAFF">
+          <Key>
+            <PropertyRef Name="WAREHOUSE_STAFF_ID" />
+          </Key>
+          <Property Name="WAREHOUSE_STAFF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" />
+        </EntityType>
+        <Association Name="FK__ACCOUNT_A__DOCTO__0D7A0286">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="ACCOUNT_AUTHORIZED" Type="Self.ACCOUNT_AUTHORIZED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_AUTHORIZED">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APPOINTME__DOCTO__73BA3083">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APPOINTME__PATIE__74AE54BC">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_Q__DOCTO__02084FDA">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="PATIENT_QUEUE" Type="Self.PATIENT_QUEUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_QUEUE">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__DOCTO__6C190EBB">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN">
+              <PropertyRef Name="DOCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__MEDIC__7A672E12">
+          <End Role="MEDICINE" Type="Self.MEDICINE" Multiplicity="1" />
+          <End Role="TREATMENT_PLAN_MEDICINE" Type="Self.TREATMENT_PLAN_MEDICINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICINE">
+              <PropertyRef Name="MEDICINE_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN_MEDICINE">
+              <PropertyRef Name="MEDICINE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_Q__PATIE__02FC7413">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="PATIENT_QUEUE" Type="Self.PATIENT_QUEUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_QUEUE">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_S__PATIE__7F2BE32F">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="1" />
+          <End Role="PATIENT_SICK_BED" Type="Self.PATIENT_SICK_BED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_SICK_BED">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RELATIONS__PATIE__778AC167">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="RELATIONSHIP" Type="Self.RELATIONSHIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="RELATIONSHIP">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__PATIE__6D0D32F4">
+          <End Role="PATIENT" Type="Self.PATIENT" Multiplicity="0..1" />
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PATIENT">
+              <PropertyRef Name="PATIENT_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN">
+              <PropertyRef Name="PATIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PATIENT_S__SICK___7E37BEF6">
+          <End Role="SICK_BED" Type="Self.SICK_BED" Multiplicity="1" />
+          <End Role="PATIENT_SICK_BED" Type="Self.PATIENT_SICK_BED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SICK_BED">
+              <PropertyRef Name="SICK_BED_ID" />
+            </Principal>
+            <Dependent Role="PATIENT_SICK_BED">
+              <PropertyRef Name="SICK_BED_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TREATMENT__TREAT__7B5B524B">
+          <End Role="TREATMENT_PLAN" Type="Self.TREATMENT_PLAN" Multiplicity="1" />
+          <End Role="TREATMENT_PLAN_MEDICINE" Type="Self.TREATMENT_PLAN_MEDICINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TREATMENT_PLAN">
+              <PropertyRef Name="TREATMENT_PLAN_ID" />
+            </Principal>
+            <Dependent Role="TREATMENT_PLAN_MEDICINE">
+              <PropertyRef Name="TREATMENT_PLAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNT_AUTHORIZED" EntityType="Self.ACCOUNT_AUTHORIZED" />
+          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+          <EntitySet Name="APPOINTMENTs" EntityType="Self.APPOINTMENT" />
+          <EntitySet Name="DIRECTORs" EntityType="Self.DIRECTOR" />
+          <EntitySet Name="DOCTORs" EntityType="Self.DOCTOR" />
+          <EntitySet Name="LOGINs" EntityType="Self.LOGIN" />
+          <EntitySet Name="MEDICINEs" EntityType="Self.MEDICINE" />
+          <EntitySet Name="PATIENTs" EntityType="Self.PATIENT" />
+          <EntitySet Name="PATIENT_QUEUE" EntityType="Self.PATIENT_QUEUE" />
+          <EntitySet Name="PATIENT_SICK_BED" EntityType="Self.PATIENT_SICK_BED" />
+          <EntitySet Name="RECEPTIONISTs" EntityType="Self.RECEPTIONIST" />
+          <EntitySet Name="RELATIONSHIPs" EntityType="Self.RELATIONSHIP" />
+          <EntitySet Name="SICK_BED" EntityType="Self.SICK_BED" />
+          <EntitySet Name="TREATMENT_PLAN" EntityType="Self.TREATMENT_PLAN" />
+          <EntitySet Name="TREATMENT_PLAN_MEDICINE" EntityType="Self.TREATMENT_PLAN_MEDICINE" />
+          <EntitySet Name="WAREHOUSE_STAFF" EntityType="Self.WAREHOUSE_STAFF" />
+          <AssociationSet Name="FK__ACCOUNT_A__DOCTO__0D7A0286" Association="Self.FK__ACCOUNT_A__DOCTO__0D7A0286">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="ACCOUNT_AUTHORIZED" EntitySet="ACCOUNT_AUTHORIZED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APPOINTME__DOCTO__73BA3083" Association="Self.FK__APPOINTME__DOCTO__73BA3083">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APPOINTME__PATIE__74AE54BC" Association="Self.FK__APPOINTME__PATIE__74AE54BC">
+            <End Role="PATIENT" EntitySet="PATIENTs" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_Q__DOCTO__02084FDA" Association="Self.FK__PATIENT_Q__DOCTO__02084FDA">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="PATIENT_QUEUE" EntitySet="PATIENT_QUEUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__DOCTO__6C190EBB" Association="Self.FK__TREATMENT__DOCTO__6C190EBB">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__MEDIC__7A672E12" Association="Self.FK__TREATMENT__MEDIC__7A672E12">
+            <End Role="MEDICINE" EntitySet="MEDICINEs" />
+            <End Role="TREATMENT_PLAN_MEDICINE" EntitySet="TREATMENT_PLAN_MEDICINE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_Q__PATIE__02FC7413" Association="Self.FK__PATIENT_Q__PATIE__02FC7413">
+            <End Role="PATIENT" EntitySet="PATIENTs" />
+            <End Role="PATIENT_QUEUE" EntitySet="PATIENT_QUEUE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_S__PATIE__7F2BE32F" Association="Self.FK__PATIENT_S__PATIE__7F2BE32F">
+            <End Role="PATIENT" EntitySet="PATIENTs" />
+            <End Role="PATIENT_SICK_BED" EntitySet="PATIENT_SICK_BED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RELATIONS__PATIE__778AC167" Association="Self.FK__RELATIONS__PATIE__778AC167">
+            <End Role="PATIENT" EntitySet="PATIENTs" />
+            <End Role="RELATIONSHIP" EntitySet="RELATIONSHIPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__PATIE__6D0D32F4" Association="Self.FK__TREATMENT__PATIE__6D0D32F4">
+            <End Role="PATIENT" EntitySet="PATIENTs" />
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PATIENT_S__SICK___7E37BEF6" Association="Self.FK__PATIENT_S__SICK___7E37BEF6">
+            <End Role="SICK_BED" EntitySet="SICK_BED" />
+            <End Role="PATIENT_SICK_BED" EntitySet="PATIENT_SICK_BED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TREATMENT__TREAT__7B5B524B" Association="Self.FK__TREATMENT__TREAT__7B5B524B">
+            <End Role="TREATMENT_PLAN" EntitySet="TREATMENT_PLAN" />
+            <End Role="TREATMENT_PLAN_MEDICINE" EntitySet="TREATMENT_PLAN_MEDICINE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LTTQModelStoreContainer" CdmEntityContainer="HospitalEntities">
+          <EntitySetMapping Name="ACCOUNT_AUTHORIZED">
+            <EntityTypeMapping TypeName="LTTQModel.ACCOUNT_AUTHORIZED">
+              <MappingFragment StoreEntitySet="ACCOUNT_AUTHORIZED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADMINs">
+            <EntityTypeMapping TypeName="LTTQModel.ADMIN">
+              <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="ADMIN_ID" ColumnName="ADMIN_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENTs">
+            <EntityTypeMapping TypeName="LTTQModel.APPOINTMENT">
+              <MappingFragment StoreEntitySet="APPOINTMENT">
+                <ScalarProperty Name="APPOINTMENT_ID" ColumnName="APPOINTMENT_ID" />
+                <ScalarProperty Name="APPOINTMENT_DATE" ColumnName="APPOINTMENT_DATE" />
+                <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="APPOINTMENT_TIME" ColumnName="APPOINTMENT_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIRECTORs">
+            <EntityTypeMapping TypeName="LTTQModel.DIRECTOR">
+              <MappingFragment StoreEntitySet="DIRECTOR">
+                <ScalarProperty Name="DIRECTOR_ID" ColumnName="DIRECTOR_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCTORs">
+            <EntityTypeMapping TypeName="LTTQModel.DOCTOR">
+              <MappingFragment StoreEntitySet="DOCTOR">
+                <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SPECIALIST" ColumnName="SPECIALIST" />
+                <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGINs">
+            <EntityTypeMapping TypeName="LTTQModel.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICINEs">
+            <EntityTypeMapping TypeName="LTTQModel.MEDICINE">
+              <MappingFragment StoreEntitySet="MEDICINE">
+                <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATIENTs">
+            <EntityTypeMapping TypeName="LTTQModel.PATIENT">
+              <MappingFragment StoreEntitySet="PATIENT">
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BORN_PLACE" ColumnName="BORN_PLACE" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INSURANCE_ID" ColumnName="INSURANCE_ID" />
+                <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATIENT_QUEUE">
+            <EntityTypeMapping TypeName="LTTQModel.PATIENT_QUEUE">
+              <MappingFragment StoreEntitySet="PATIENT_QUEUE">
+                <ScalarProperty Name="QUEUE_ID" ColumnName="QUEUE_ID" />
+                <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATIENT_SICK_BED">
+            <EntityTypeMapping TypeName="LTTQModel.PATIENT_SICK_BED">
+              <MappingFragment StoreEntitySet="PATIENT_SICK_BED">
+                <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+                <ScalarProperty Name="DATE_END" ColumnName="DATE_END" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECEPTIONISTs">
+            <EntityTypeMapping TypeName="LTTQModel.RECEPTIONIST">
+              <MappingFragment StoreEntitySet="RECEPTIONIST">
+                <ScalarProperty Name="RECEPTIONIST_ID" ColumnName="RECEPTIONIST_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RELATIONSHIPs">
+            <EntityTypeMapping TypeName="LTTQModel.RELATIONSHIP">
+              <MappingFragment StoreEntitySet="RELATIONSHIP">
+                <ScalarProperty Name="RELATIONSHIP_ID" ColumnName="RELATIONSHIP_ID" />
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SICK_BED">
+            <EntityTypeMapping TypeName="LTTQModel.SICK_BED">
+              <MappingFragment StoreEntitySet="SICK_BED">
+                <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+                <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+                <ScalarProperty Name="IS_AVAILABLE" ColumnName="IS_AVAILABLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TREATMENT_PLAN">
+            <EntityTypeMapping TypeName="LTTQModel.TREATMENT_PLAN">
+              <MappingFragment StoreEntitySet="TREATMENT_PLAN">
+                <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
+                <ScalarProperty Name="TREATMENT_PLAN_DATE" ColumnName="TREATMENT_PLAN_DATE" />
+                <ScalarProperty Name="MEDICAL_INSTRUCTION" ColumnName="MEDICAL_INSTRUCTION" />
+                <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+                <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+                <ScalarProperty Name="SYMPTOM" ColumnName="SYMPTOM" />
+                <ScalarProperty Name="HEALTH_STATUS" ColumnName="HEALTH_STATUS" />
+                <ScalarProperty Name="IS_PAID" ColumnName="IS_PAID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TREATMENT_PLAN_MEDICINE">
+            <EntityTypeMapping TypeName="LTTQModel.TREATMENT_PLAN_MEDICINE">
+              <MappingFragment StoreEntitySet="TREATMENT_PLAN_MEDICINE">
+                <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
+                <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WAREHOUSE_STAFF">
+            <EntityTypeMapping TypeName="LTTQModel.WAREHOUSE_STAFF">
+              <MappingFragment StoreEntitySet="WAREHOUSE_STAFF">
+                <ScalarProperty Name="WAREHOUSE_STAFF_ID" ColumnName="WAREHOUSE_STAFF_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
