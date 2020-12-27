@@ -39,7 +39,7 @@
             this.gunaLineTextBox2 = new Guna.UI.WinForms.GunaLineTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -161,21 +161,21 @@
             this.gunaLineTextBox1.TabIndex = 46;
             this.gunaLineTextBox1.Text = "Your name";
             // 
-            // guna2DateTimePicker2
+            // dtpBirth
             // 
-            this.guna2DateTimePicker2.CheckedState.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.HoverState.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(170, 139);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.ShadowDecoration.Parent = this.guna2DateTimePicker2;
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(387, 36);
-            this.guna2DateTimePicker2.TabIndex = 45;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2020, 12, 27, 7, 26, 26, 548);
+            this.dtpBirth.CheckedState.Parent = this.dtpBirth;
+            this.dtpBirth.FillColor = System.Drawing.Color.White;
+            this.dtpBirth.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBirth.HoverState.Parent = this.dtpBirth;
+            this.dtpBirth.Location = new System.Drawing.Point(170, 139);
+            this.dtpBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpBirth.Name = "dtpBirth";
+            this.dtpBirth.ShadowDecoration.Parent = this.dtpBirth;
+            this.dtpBirth.Size = new System.Drawing.Size(387, 36);
+            this.dtpBirth.TabIndex = 45;
+            this.dtpBirth.Value = new System.DateTime(2020, 12, 27, 7, 26, 26, 548);
             // 
             // label5
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.gunaLineTextBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gunaLineTextBox1);
-            this.Controls.Add(this.guna2DateTimePicker2);
+            this.Controls.Add(this.dtpBirth);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SIGN_UP_FORM_USER_INFO_OTHER";
@@ -226,7 +226,7 @@
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox2;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBirth;
         private System.Windows.Forms.Label label5;
     }
 }
