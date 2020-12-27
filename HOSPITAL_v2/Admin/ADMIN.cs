@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HOSPITAL_v2.Admin
+namespace HOSPITAL_v2.ADMIN
 {
     public partial class ADMIN : Form
     {
