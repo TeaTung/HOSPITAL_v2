@@ -181,6 +181,7 @@
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SIGN_UP_FORM_EMAIL";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIGN_UP_FORM";
             this.Load += new System.EventHandler(this.SIGN_UP_FORM_EMAIL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();

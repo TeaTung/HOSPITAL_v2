@@ -45,10 +45,12 @@ namespace HOSPITAL_v2
 
         private void lbSignUp_Click(object sender, EventArgs e)
         {
+            this.Hide();
             using (SIGN_UP_FORM_EMAIL signUpForm = new SIGN_UP_FORM_EMAIL())
             {
                 signUpForm.ShowDialog();
             }
+            this.Show();
         }
 
         private void LOGIN_FORM_Load(object sender, EventArgs e)

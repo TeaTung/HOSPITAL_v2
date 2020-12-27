@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace HOSPITAL_v2.LOGIN
 {
-    public partial class SIGN_UP_FORM_USER_INFO_DOCTOR : Form
+    public partial class SIGN_UP_FORM_USER_INFO_OTHER : Form
     {
-        public SIGN_UP_FORM_USER_INFO_DOCTOR(string email, string username, string password)
+        public SIGN_UP_FORM_USER_INFO_OTHER(string email, string username, string password)
         {
             InitializeComponent();
         }
 
-        private void SIGN_UP_FORM_USER_INFO_DOCTOR_Load(object sender, EventArgs e)
+        private void SIGN_UP_FORM_USER_INFO_OTHER_Load(object sender, EventArgs e)
         {
 
         }
