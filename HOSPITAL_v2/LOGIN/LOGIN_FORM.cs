@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HOSPITAL_v2.LOGIN;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,29 @@ namespace HOSPITAL_v2
         private void lbForgot_MouseLeave(object sender, EventArgs e)
         {
             lbForgot.ForeColor = Color.DarkGray;
+        }
+
+        private void lbForgot_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FORGOT_PASSWORD_FORM_RESET_CODE resetForm = new FORGOT_PASSWORD_FORM_RESET_CODE())
+            {
+                resetForm.ShowDialog();                
+            }
+            this.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lbSignUp_Click(object sender, EventArgs e)
+        {
+            using (SIGN_UP_FORM_EMAIL signUpForm = new SIGN_UP_FORM_EMAIL())
+            {
+                signUpForm.ShowDialog();
+            }
         }
     }
 }

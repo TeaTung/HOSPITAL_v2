@@ -53,9 +53,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2020.3.915.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.UI, Version=2020.3.915.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2020.3.915.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Doctor\Form1.cs">
@@ -64,11 +61,17 @@
     <Compile Include="Doctor\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM.cs">
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM.Designer.cs">
-      <DependentUpon>FORGOT_PASSWORD_FORM.cs</DependentUpon>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.Designer.cs">
+      <DependentUpon>FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.Designer.cs">
+      <DependentUpon>FORGOT_PASSWORD_FORM_RESET_CODE.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN\LOGIN_FORM.cs">
       <SubType>Form</SubType>
@@ -76,16 +79,37 @@
     <Compile Include="LOGIN\LOGIN_FORM.Designer.cs">
       <DependentUpon>LOGIN_FORM.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_EMAIL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_EMAIL.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_EMAIL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Doctor\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM.resx">
-      <DependentUpon>FORGOT_PASSWORD_FORM.cs</DependentUpon>
+    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.resx">
+      <DependentUpon>FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM_RESET_CODE.resx">
+      <DependentUpon>FORGOT_PASSWORD_FORM_RESET_CODE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN\LOGIN_FORM.resx">
       <DependentUpon>LOGIN_FORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_EMAIL.resx">
+      <DependentUpon>SIGN_UP_FORM_EMAIL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.resx">
+      <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
+    <None Include="Resources\close.png" />
     <None Include="Resources\send.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
