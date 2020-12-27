@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="LTTQEntities">
+    <EntitySetMapping Name="ACCOUNT_AUTHORIZED">
+      <EntityTypeMapping TypeName="HospitalModel.ACCOUNT_AUTHORIZED">
+        <MappingFragment StoreEntitySet="ACCOUNT_AUTHORIZED">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMINs">
+      <EntityTypeMapping TypeName="HospitalModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="ADMIN_ID" ColumnName="ADMIN_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPOINTMENTs">
+      <EntityTypeMapping TypeName="HospitalModel.APPOINTMENT">
+        <MappingFragment StoreEntitySet="APPOINTMENT">
+          <ScalarProperty Name="APPOINTMENT_ID" ColumnName="APPOINTMENT_ID" />
+          <ScalarProperty Name="APPOINTMENT_DATE" ColumnName="APPOINTMENT_DATE" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="APPOINTMENT_TIME" ColumnName="APPOINTMENT_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIRECTORs">
+      <EntityTypeMapping TypeName="HospitalModel.DIRECTOR">
+        <MappingFragment StoreEntitySet="DIRECTOR">
+          <ScalarProperty Name="DIRECTOR_ID" ColumnName="DIRECTOR_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCTORs">
+      <EntityTypeMapping TypeName="HospitalModel.DOCTOR">
+        <MappingFragment StoreEntitySet="DOCTOR">
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SPECIALIST" ColumnName="SPECIALIST" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="READY" ColumnName="READY" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGINs">
+      <EntityTypeMapping TypeName="HospitalModel.LOGIN">
+        <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICINEs">
+      <EntityTypeMapping TypeName="HospitalModel.MEDICINE">
+        <MappingFragment StoreEntitySet="MEDICINE">
+          <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PATIENTs">
+      <EntityTypeMapping TypeName="HospitalModel.PATIENT">
+        <MappingFragment StoreEntitySet="PATIENT">
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BORN_PLACE" ColumnName="BORN_PLACE" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="INSURANCE_ID" ColumnName="INSURANCE_ID" />
+          <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PATIENT_QUEUE">
+      <EntityTypeMapping TypeName="HospitalModel.PATIENT_QUEUE">
+        <MappingFragment StoreEntitySet="PATIENT_QUEUE">
+          <ScalarProperty Name="QUEUE_ID" ColumnName="QUEUE_ID" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PATIENT_SICK_BED">
+      <EntityTypeMapping TypeName="HospitalModel.PATIENT_SICK_BED">
+        <MappingFragment StoreEntitySet="PATIENT_SICK_BED">
+          <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+          <ScalarProperty Name="DATE_END" ColumnName="DATE_END" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECEPTIONISTs">
+      <EntityTypeMapping TypeName="HospitalModel.RECEPTIONIST">
+        <MappingFragment StoreEntitySet="RECEPTIONIST">
+          <ScalarProperty Name="RECEPTIONIST_ID" ColumnName="RECEPTIONIST_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RELATIONSHIPs">
+      <EntityTypeMapping TypeName="HospitalModel.RELATIONSHIP">
+        <MappingFragment StoreEntitySet="RELATIONSHIP">
+          <ScalarProperty Name="RELATIONSHIP_ID" ColumnName="RELATIONSHIP_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SICK_BED">
+      <EntityTypeMapping TypeName="HospitalModel.SICK_BED">
+        <MappingFragment StoreEntitySet="SICK_BED">
+          <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="IS_AVAILABLE" ColumnName="IS_AVAILABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TREATMENT_PLAN">
+      <EntityTypeMapping TypeName="HospitalModel.TREATMENT_PLAN">
+        <MappingFragment StoreEntitySet="TREATMENT_PLAN">
+          <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
+          <ScalarProperty Name="TREATMENT_PLAN_DATE" ColumnName="TREATMENT_PLAN_DATE" />
+          <ScalarProperty Name="MEDICAL_INSTRUCTION" ColumnName="MEDICAL_INSTRUCTION" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="SYMPTOM" ColumnName="SYMPTOM" />
+          <ScalarProperty Name="HEALTH_STATUS" ColumnName="HEALTH_STATUS" />
+          <ScalarProperty Name="IS_PAID" ColumnName="IS_PAID" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TREATMENT_PLAN_MEDICINE">
+      <EntityTypeMapping TypeName="HospitalModel.TREATMENT_PLAN_MEDICINE">
+        <MappingFragment StoreEntitySet="TREATMENT_PLAN_MEDICINE">
+          <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
+          <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WAREHOUSE_STAFF">
+      <EntityTypeMapping TypeName="HospitalModel.WAREHOUSE_STAFF">
+        <MappingFragment StoreEntitySet="WAREHOUSE_STAFF">
+          <ScalarProperty Name="WAREHOUSE_STAFF_ID" ColumnName="WAREHOUSE_STAFF_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,4 +1,7 @@
-﻿namespace HOSPITAL_v2
+﻿using HOSPITAL_v2.Properties;
+using HOSPITAL_v2;
+
+namespace HOSPITAL_v2
 {
     partial class LOGIN_FORM
     {
@@ -135,7 +138,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::HOSPITAL_v2.Properties.Resources.close;
+            //this.pictureBox1.Image = HOSPITAL_v2.Properties.Settings;
             this.pictureBox1.Location = new System.Drawing.Point(1214, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 52);
@@ -148,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::HOSPITAL_v2.Properties.Resources.LOGIN_FORM;
+            //this.BackgroundImage = global::HOSPITAL_v2.Properties.Resources.LOGIN_FORM;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbSignUp);

@@ -82,6 +82,7 @@
     <Compile Include="Data Layer\DOCTOR.cs">
       <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data Layer\HospitalEntity.cs" />
     <Compile Include="Data Layer\HospitalModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
