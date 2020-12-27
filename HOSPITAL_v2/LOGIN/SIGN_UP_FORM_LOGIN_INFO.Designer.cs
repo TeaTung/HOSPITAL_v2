@@ -38,7 +38,7 @@
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             this.btnNext.Size = new System.Drawing.Size(117, 45);
             this.btnNext.TabIndex = 29;
             this.btnNext.Text = "Next";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // gunaLineTextBox3
             // 
@@ -162,30 +163,30 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Role";
             // 
-            // guna2ComboBox1
+            // cbRole
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.cbRole.BackColor = System.Drawing.Color.Transparent;
+            this.cbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRole.FocusedState.Parent = this.cbRole;
+            this.cbRole.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbRole.HoverState.Parent = this.cbRole;
+            this.cbRole.ItemHeight = 30;
+            this.cbRole.Items.AddRange(new object[] {
             "Doctor",
             "Receptionist",
             "Warehose Manager",
             "Manager"});
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(225, 259);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(335, 36);
-            this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2ComboBox1.TabIndex = 33;
+            this.cbRole.ItemsAppearance.Parent = this.cbRole;
+            this.cbRole.Location = new System.Drawing.Point(225, 259);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.ShadowDecoration.Parent = this.cbRole;
+            this.cbRole.Size = new System.Drawing.Size(335, 36);
+            this.cbRole.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbRole.TabIndex = 33;
             // 
             // guna2Elipse1
             // 
@@ -202,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(614, 382);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gunaLineTextBox1);
             this.Controls.Add(this.label4);
@@ -230,7 +231,7 @@
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbRole;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }

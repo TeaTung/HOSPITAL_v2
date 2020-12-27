@@ -16,5 +16,16 @@ namespace HOSPITAL_v2.LOGIN
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if(cbRole.Text == "Doctor")
+            {
+                using(SIGN_UP_FORM_USER_INFO_DOCTOR doctorSignUpForm = new SIGN_UP_FORM_USER_INFO_DOCTOR())
+                {
+                    doctorSignUpForm.ShowDialog();
+                }
+            }
+        }
     }
 }

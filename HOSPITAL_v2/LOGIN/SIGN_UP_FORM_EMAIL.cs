@@ -16,5 +16,14 @@ namespace HOSPITAL_v2.LOGIN
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            using(SIGN_UP_FORM_LOGIN_INFO signUpForm = new SIGN_UP_FORM_LOGIN_INFO())
+            {
+                signUpForm.ShowDialog();
+            }
+            this.Close();
+        }
     }
 }

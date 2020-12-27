@@ -36,10 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbEmail = new Guna.UI.WinForms.GunaLineTextBox();
-            this.pbClose = new System.Windows.Forms.PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pbClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             this.btnNext.Size = new System.Drawing.Size(117, 45);
             this.btnNext.TabIndex = 21;
             this.btnNext.Text = "Next";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // gunaLineTextBox3
             // 
@@ -100,18 +101,18 @@
             this.gunaLineTextBox3.SelectedText = "";
             this.gunaLineTextBox3.Size = new System.Drawing.Size(388, 38);
             this.gunaLineTextBox3.TabIndex = 20;
-            this.gunaLineTextBox3.Text = "Reset code";
+            this.gunaLineTextBox3.Text = "Confirm code";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(46, 138);
+            this.label2.Location = new System.Drawing.Point(20, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 30);
+            this.label2.Size = new System.Drawing.Size(145, 30);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Reset code";
+            this.label2.Text = "Confirm code";
             // 
             // label1
             // 
@@ -140,17 +141,6 @@
             this.tbEmail.TabIndex = 17;
             this.tbEmail.Text = "Your email";
             // 
-            // pbClose
-            // 
-            this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbClose.Image = global::HOSPITAL_v2.Properties.Resources.close;
-            this.pbClose.Location = new System.Drawing.Point(561, 12);
-            this.pbClose.Name = "pbClose";
-            this.pbClose.Size = new System.Drawing.Size(41, 38);
-            this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbClose.TabIndex = 23;
-            this.pbClose.TabStop = false;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 14;
@@ -164,7 +154,18 @@
             // 
             this.guna2Elipse3.TargetControl = this.btnNext;
             // 
-            // SIGN_UP_FORM
+            // pbClose
+            // 
+            this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbClose.Image = global::HOSPITAL_v2.Properties.Resources.close;
+            this.pbClose.Location = new System.Drawing.Point(561, 12);
+            this.pbClose.Name = "pbClose";
+            this.pbClose.Size = new System.Drawing.Size(41, 38);
+            this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbClose.TabIndex = 23;
+            this.pbClose.TabStop = false;
+            // 
+            // SIGN_UP_FORM_EMAIL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +180,7 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SIGN_UP_FORM";
+            this.Name = "SIGN_UP_FORM_EMAIL";
             this.Text = "SIGN_UP_FORM";
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             this.ResumeLayout(false);

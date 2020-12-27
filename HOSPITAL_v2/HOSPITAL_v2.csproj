@@ -91,6 +91,12 @@
     <Compile Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.Designer.cs">
       <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Doctor\Form1.resx">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_LOGIN_INFO.resx">
       <DependentUpon>SIGN_UP_FORM_LOGIN_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.resx">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
