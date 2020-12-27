@@ -19,7 +19,7 @@ namespace HOSPITAL_v2.LOGIN
 
         private void FORGOT_PASSWORD_FORM_NEW_PASSWORD_Load(object sender, EventArgs e)
         {
-
+            this.DoubleBuffered = true;
         }
 
         private void pbClose_Click(object sender, EventArgs e)

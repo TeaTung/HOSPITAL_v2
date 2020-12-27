@@ -15,6 +15,8 @@ namespace HOSPITAL_v2.LOGIN
         public SIGN_UP_FORM_LOGIN_INFO()
         {
             InitializeComponent();
+
+            this.DoubleBuffered = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -26,6 +28,10 @@ namespace HOSPITAL_v2.LOGIN
                     doctorSignUpForm.ShowDialog();
                 }
             }
+        }
+
+        private void SIGN_UP_FORM_LOGIN_INFO_Load(object sender, EventArgs e)
+        {
         }
     }
 }

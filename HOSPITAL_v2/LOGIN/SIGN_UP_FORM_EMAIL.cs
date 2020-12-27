@@ -25,5 +25,11 @@ namespace HOSPITAL_v2.LOGIN
             }
             this.Close();
         }
+
+        private void SIGN_UP_FORM_EMAIL_Load(object sender, EventArgs e)
+        {
+
+            this.DoubleBuffered = true;
+        }
     }
 }

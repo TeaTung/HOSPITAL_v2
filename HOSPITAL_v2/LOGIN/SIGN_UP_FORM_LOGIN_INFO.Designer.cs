@@ -216,6 +216,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SIGN_UP_FORM_LOGIN_INFO";
             this.Text = "SIGN_UP_FORM_LOGIN_INFO";
+            this.Load += new System.EventHandler(this.SIGN_UP_FORM_LOGIN_INFO_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

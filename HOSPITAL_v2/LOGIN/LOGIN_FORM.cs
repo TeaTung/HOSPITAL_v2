@@ -50,5 +50,11 @@ namespace HOSPITAL_v2
                 signUpForm.ShowDialog();
             }
         }
+
+        private void LOGIN_FORM_Load(object sender, EventArgs e)
+        {
+
+            this.DoubleBuffered = true;
+        }
     }
 }

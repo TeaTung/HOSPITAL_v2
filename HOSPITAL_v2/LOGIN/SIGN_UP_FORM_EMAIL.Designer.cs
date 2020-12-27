@@ -182,6 +182,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SIGN_UP_FORM_EMAIL";
             this.Text = "SIGN_UP_FORM";
+            this.Load += new System.EventHandler(this.SIGN_UP_FORM_EMAIL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
