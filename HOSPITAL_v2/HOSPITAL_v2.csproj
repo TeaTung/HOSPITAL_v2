@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -103,6 +106,12 @@
     <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.Designer.cs">
       <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.Designer.cs">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_OTHER.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ADMIN\ADMIN.resx">
@@ -129,6 +138,9 @@
     <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_USER_INFO_DOCTOR.resx">
       <DependentUpon>SIGN_UP_FORM_USER_INFO_DOCTOR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\SIGN_UP_FORM_USER_INFO_OTHER.resx">
+      <DependentUpon>SIGN_UP_FORM_USER_INFO_OTHER.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -139,6 +151,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

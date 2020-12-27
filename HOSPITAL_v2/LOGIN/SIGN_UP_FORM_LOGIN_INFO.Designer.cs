@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.gunaLineTextBox3 = new Guna.UI.WinForms.GunaLineTextBox();
+            this.tbPassword = new Guna.UI.WinForms.GunaLineTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbEmail = new Guna.UI.WinForms.GunaLineTextBox();
+            this.tbUsername = new Guna.UI.WinForms.GunaLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,21 +60,21 @@
             this.btnNext.Text = "Next";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // gunaLineTextBox3
+            // tbPassword
             // 
-            this.gunaLineTextBox3.BackColor = System.Drawing.Color.White;
-            this.gunaLineTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaLineTextBox3.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLineTextBox3.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.gunaLineTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLineTextBox3.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLineTextBox3.Location = new System.Drawing.Point(225, 139);
-            this.gunaLineTextBox3.Name = "gunaLineTextBox3";
-            this.gunaLineTextBox3.PasswordChar = '\0';
-            this.gunaLineTextBox3.SelectedText = "";
-            this.gunaLineTextBox3.Size = new System.Drawing.Size(334, 38);
-            this.gunaLineTextBox3.TabIndex = 28;
-            this.gunaLineTextBox3.Text = "Reset code";
+            this.tbPassword.BackColor = System.Drawing.Color.White;
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPassword.LineColor = System.Drawing.Color.Gainsboro;
+            this.tbPassword.Location = new System.Drawing.Point(225, 139);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.Size = new System.Drawing.Size(334, 38);
+            this.tbPassword.TabIndex = 28;
+            this.tbPassword.Text = "Reset code";
             // 
             // label2
             // 
@@ -98,21 +98,21 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Username";
             // 
-            // tbEmail
+            // tbUsername
             // 
-            this.tbEmail.BackColor = System.Drawing.Color.White;
-            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbEmail.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.tbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbEmail.LineColor = System.Drawing.Color.Gainsboro;
-            this.tbEmail.Location = new System.Drawing.Point(225, 80);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.PasswordChar = '\0';
-            this.tbEmail.SelectedText = "";
-            this.tbEmail.Size = new System.Drawing.Size(334, 38);
-            this.tbEmail.TabIndex = 25;
-            this.tbEmail.Text = "Your email";
+            this.tbUsername.BackColor = System.Drawing.Color.White;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.tbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbUsername.LineColor = System.Drawing.Color.Gainsboro;
+            this.tbUsername.Location = new System.Drawing.Point(225, 80);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PasswordChar = '\0';
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.Size = new System.Drawing.Size(334, 38);
+            this.tbUsername.TabIndex = 25;
+            this.tbUsername.Text = "Your username";
             // 
             // label3
             // 
@@ -208,13 +208,14 @@
             this.Controls.Add(this.gunaLineTextBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.gunaLineTextBox3);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SIGN_UP_FORM_LOGIN_INFO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIGN_UP_FORM_LOGIN_INFO";
             this.Load += new System.EventHandler(this.SIGN_UP_FORM_LOGIN_INFO_Load);
             this.ResumeLayout(false);
@@ -224,10 +225,10 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnNext;
-        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox3;
+        private Guna.UI.WinForms.GunaLineTextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaLineTextBox tbEmail;
+        private Guna.UI.WinForms.GunaLineTextBox tbUsername;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
         private System.Windows.Forms.Label label4;
