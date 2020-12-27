@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6133326b10ab4a4fa503d420a5b0fb05" Name="Diagram1">
+        <EntityTypeShape EntityType="HospitalModel.ACCOUNT_AUTHORIZED" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.ADMIN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.APPOINTMENT" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.DIRECTOR" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.DOCTOR" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.LOGIN" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.MEDICINE" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.PATIENT" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.PATIENT_QUEUE" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.PATIENT_SICK_BED" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.RECEPTIONIST" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.RELATIONSHIP" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.SICK_BED" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.TREATMENT_PLAN" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.TREATMENT_PLAN_MEDICINE" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.WAREHOUSE_STAFF" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HospitalModel.FK__ACCOUNT_A__DOCTO__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__APPOINTME__DOCTO__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__APPOINTME__PATIE__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__PATIENT_Q__DOCTO__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__TREATMENT__DOCTO__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__TREATMENT__MEDIC__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__PATIENT_Q__PATIE__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__PATIENT_S__PATIE__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__RELATIONS__PATIE__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__TREATMENT__PATIE__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__PATIENT_S__SICK___7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK__TREATMENT__TREAT__7B5B524B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

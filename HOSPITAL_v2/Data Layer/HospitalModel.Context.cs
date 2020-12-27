@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HOSPITAL_v2.Data_layer
+namespace HOSPITAL_v2.Data_Layer
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HospitalEntities : DbContext
+    public partial class LTTQEntities : DbContext
     {
-        public HospitalEntities()
-            : base("name=HospitalEntities")
+        public LTTQEntities()
+            : base("name=LTTQEntities")
         {
         }
     

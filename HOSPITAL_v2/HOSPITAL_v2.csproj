@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -44,9 +50,12 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,72 +68,67 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data Layer\ACCOUNT_AUTHORIZED.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\ADMIN.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\APPOINTMENT.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\DIRECTOR.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\DOCTOR.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data Layer\HospitalEntity.Context.cs" />
-    <Compile Include="Data Layer\HospitalEntity.Context1.cs">
+    <Compile Include="Data Layer\HospitalModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HospitalEntity.Context.tt</DependentUpon>
+      <DependentUpon>HospitalModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data Layer\HospitalEntity.cs" />
-    <Compile Include="Data Layer\HospitalEntity.Designer.cs">
-      <DependentUpon>HospitalEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data Layer\HospitalEntity1.cs">
+    <Compile Include="Data Layer\HospitalModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data Layer\HospitalEntity1.Designer.cs">
+    <Compile Include="Data Layer\HospitalModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\LOGIN.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\MEDICINE.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\PATIENT.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\PATIENT_QUEUE.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\PATIENT_SICK_BED.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\RECEPTIONIST.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\RELATIONSHIP.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\SICK_BED.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\TREATMENT_PLAN.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\TREATMENT_PLAN_MEDICINE.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data Layer\WAREHOUSE_STAFF.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
+      <DependentUpon>HospitalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Doctor\Form1.cs">
       <SubType>Form</SubType>
@@ -222,12 +226,12 @@
     <EmbeddedResource Include="RECEPTIONIST\RECEPTIONIST_FORM.resx">
       <DependentUpon>RECEPTIONIST_FORM.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Data Layer\HospitalEntity.edmx">
+    <EntityDeploy Include="Data Layer\HospitalModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HospitalEntity1.Designer.cs</LastGenOutput>
+      <LastGenOutput>HospitalModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data Layer\HospitalEntity.edmx.diagram">
-      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    <None Include="Data Layer\HospitalModel.edmx.diagram">
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -247,13 +251,15 @@
     <None Include="Resources\LOGIN FORM.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data Layer\HospitalEntity.Context.tt">
+    <Content Include="Data Layer\HospitalModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HospitalEntity.Context1.cs</LastGenOutput>
+      <LastGenOutput>HospitalModel.Context.cs</LastGenOutput>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Data Layer\HospitalEntity.tt">
+    <Content Include="Data Layer\HospitalModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HospitalEntity1.cs</LastGenOutput>
+      <DependentUpon>HospitalModel.edmx</DependentUpon>
+      <LastGenOutput>HospitalModel.cs</LastGenOutput>
     </Content>
     <Content Include="NewFile1.txt" />
     <None Include="Resources\Logo%402x1.png" />

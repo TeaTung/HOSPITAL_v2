@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LTTQModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT_AUTHORIZED">
           <Key>
             <PropertyRef Name="ID" />
@@ -304,7 +304,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LTTQModelStoreContainer">
+        <EntityContainer Name="HospitalModelStoreContainer">
           <EntitySet Name="ACCOUNT_AUTHORIZED" EntityType="Self.ACCOUNT_AUTHORIZED" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="APPOINTMENT" EntityType="Self.APPOINTMENT" Schema="dbo" store:Type="Tables" />
@@ -374,7 +374,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LTTQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="HospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ACCOUNT_AUTHORIZED">
           <Key>
             <PropertyRef Name="ID" />
@@ -698,7 +698,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LTTQEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACCOUNT_AUTHORIZED" EntityType="Self.ACCOUNT_AUTHORIZED" />
           <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
           <EntitySet Name="APPOINTMENTs" EntityType="Self.APPOINTMENT" />
@@ -769,9 +769,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LTTQModelStoreContainer" CdmEntityContainer="HospitalEntities">
+        <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="LTTQEntities">
           <EntitySetMapping Name="ACCOUNT_AUTHORIZED">
-            <EntityTypeMapping TypeName="LTTQModel.ACCOUNT_AUTHORIZED">
+            <EntityTypeMapping TypeName="HospitalModel.ACCOUNT_AUTHORIZED">
               <MappingFragment StoreEntitySet="ACCOUNT_AUTHORIZED">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
@@ -780,7 +780,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ADMINs">
-            <EntityTypeMapping TypeName="LTTQModel.ADMIN">
+            <EntityTypeMapping TypeName="HospitalModel.ADMIN">
               <MappingFragment StoreEntitySet="ADMIN">
                 <ScalarProperty Name="ADMIN_ID" ColumnName="ADMIN_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -791,7 +791,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="APPOINTMENTs">
-            <EntityTypeMapping TypeName="LTTQModel.APPOINTMENT">
+            <EntityTypeMapping TypeName="HospitalModel.APPOINTMENT">
               <MappingFragment StoreEntitySet="APPOINTMENT">
                 <ScalarProperty Name="APPOINTMENT_ID" ColumnName="APPOINTMENT_ID" />
                 <ScalarProperty Name="APPOINTMENT_DATE" ColumnName="APPOINTMENT_DATE" />
@@ -803,7 +803,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DIRECTORs">
-            <EntityTypeMapping TypeName="LTTQModel.DIRECTOR">
+            <EntityTypeMapping TypeName="HospitalModel.DIRECTOR">
               <MappingFragment StoreEntitySet="DIRECTOR">
                 <ScalarProperty Name="DIRECTOR_ID" ColumnName="DIRECTOR_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -811,7 +811,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DOCTORs">
-            <EntityTypeMapping TypeName="LTTQModel.DOCTOR">
+            <EntityTypeMapping TypeName="HospitalModel.DOCTOR">
               <MappingFragment StoreEntitySet="DOCTOR">
                 <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -825,7 +825,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOGINs">
-            <EntityTypeMapping TypeName="LTTQModel.LOGIN">
+            <EntityTypeMapping TypeName="HospitalModel.LOGIN">
               <MappingFragment StoreEntitySet="LOGIN">
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
@@ -835,7 +835,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MEDICINEs">
-            <EntityTypeMapping TypeName="LTTQModel.MEDICINE">
+            <EntityTypeMapping TypeName="HospitalModel.MEDICINE">
               <MappingFragment StoreEntitySet="MEDICINE">
                 <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -844,7 +844,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PATIENTs">
-            <EntityTypeMapping TypeName="LTTQModel.PATIENT">
+            <EntityTypeMapping TypeName="HospitalModel.PATIENT">
               <MappingFragment StoreEntitySet="PATIENT">
                 <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -858,7 +858,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PATIENT_QUEUE">
-            <EntityTypeMapping TypeName="LTTQModel.PATIENT_QUEUE">
+            <EntityTypeMapping TypeName="HospitalModel.PATIENT_QUEUE">
               <MappingFragment StoreEntitySet="PATIENT_QUEUE">
                 <ScalarProperty Name="QUEUE_ID" ColumnName="QUEUE_ID" />
                 <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
@@ -868,7 +868,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PATIENT_SICK_BED">
-            <EntityTypeMapping TypeName="LTTQModel.PATIENT_SICK_BED">
+            <EntityTypeMapping TypeName="HospitalModel.PATIENT_SICK_BED">
               <MappingFragment StoreEntitySet="PATIENT_SICK_BED">
                 <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
                 <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
@@ -878,7 +878,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RECEPTIONISTs">
-            <EntityTypeMapping TypeName="LTTQModel.RECEPTIONIST">
+            <EntityTypeMapping TypeName="HospitalModel.RECEPTIONIST">
               <MappingFragment StoreEntitySet="RECEPTIONIST">
                 <ScalarProperty Name="RECEPTIONIST_ID" ColumnName="RECEPTIONIST_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -886,7 +886,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RELATIONSHIPs">
-            <EntityTypeMapping TypeName="LTTQModel.RELATIONSHIP">
+            <EntityTypeMapping TypeName="HospitalModel.RELATIONSHIP">
               <MappingFragment StoreEntitySet="RELATIONSHIP">
                 <ScalarProperty Name="RELATIONSHIP_ID" ColumnName="RELATIONSHIP_ID" />
                 <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
@@ -896,7 +896,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SICK_BED">
-            <EntityTypeMapping TypeName="LTTQModel.SICK_BED">
+            <EntityTypeMapping TypeName="HospitalModel.SICK_BED">
               <MappingFragment StoreEntitySet="SICK_BED">
                 <ScalarProperty Name="SICK_BED_ID" ColumnName="SICK_BED_ID" />
                 <ScalarProperty Name="ROOM" ColumnName="ROOM" />
@@ -905,7 +905,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TREATMENT_PLAN">
-            <EntityTypeMapping TypeName="LTTQModel.TREATMENT_PLAN">
+            <EntityTypeMapping TypeName="HospitalModel.TREATMENT_PLAN">
               <MappingFragment StoreEntitySet="TREATMENT_PLAN">
                 <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
                 <ScalarProperty Name="TREATMENT_PLAN_DATE" ColumnName="TREATMENT_PLAN_DATE" />
@@ -920,7 +920,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TREATMENT_PLAN_MEDICINE">
-            <EntityTypeMapping TypeName="LTTQModel.TREATMENT_PLAN_MEDICINE">
+            <EntityTypeMapping TypeName="HospitalModel.TREATMENT_PLAN_MEDICINE">
               <MappingFragment StoreEntitySet="TREATMENT_PLAN_MEDICINE">
                 <ScalarProperty Name="MEDICINE_ID" ColumnName="MEDICINE_ID" />
                 <ScalarProperty Name="TREATMENT_PLAN_ID" ColumnName="TREATMENT_PLAN_ID" />
@@ -929,7 +929,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WAREHOUSE_STAFF">
-            <EntityTypeMapping TypeName="LTTQModel.WAREHOUSE_STAFF">
+            <EntityTypeMapping TypeName="HospitalModel.WAREHOUSE_STAFF">
               <MappingFragment StoreEntitySet="WAREHOUSE_STAFF">
                 <ScalarProperty Name="WAREHOUSE_STAFF_ID" ColumnName="WAREHOUSE_STAFF_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
