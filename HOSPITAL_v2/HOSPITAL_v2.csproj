@@ -37,10 +37,10 @@
       <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\19522\OneDrive\Máy tính\Patient Form\bin\Debug\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\19522\OneDrive\Máy tính\Patient Form\bin\Debug\Guna.UI2.dll</HintPath>
+      <HintPath>..\..\..\..\Guna\Guna-20201117T130141Z-001\Guna\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -58,12 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADMIN\ADMIN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ADMIN\ADMIN.Designer.cs">
-      <DependentUpon>ADMIN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Doctor\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     <Compile Include="RECEPTIONIST\RECEPTIONIST_FORM.Designer.cs">
       <DependentUpon>RECEPTIONIST_FORM.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ADMIN\ADMIN.resx">
-      <DependentUpon>ADMIN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
