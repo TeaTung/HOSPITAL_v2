@@ -58,11 +58,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Layer\ACCOUNT_AUTHORIZED.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\ADMIN.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\APPOINTMENT.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\DIRECTOR.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\DOCTOR.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\HospitalEntity.Context.cs" />
+    <Compile Include="Data Layer\HospitalEntity.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\HospitalEntity.cs" />
+    <Compile Include="Data Layer\HospitalEntity.Designer.cs">
+      <DependentUpon>HospitalEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\HospitalEntity1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\HospitalEntity1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\LOGIN.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\MEDICINE.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\PATIENT.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\PATIENT_QUEUE.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\PATIENT_SICK_BED.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\RECEPTIONIST.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\RELATIONSHIP.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\SICK_BED.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\TREATMENT_PLAN.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\TREATMENT_PLAN_MEDICINE.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Layer\WAREHOUSE_STAFF.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doctor\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\uCon\uConPatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\uCon\uConPatientInfo.Designer.cs">
+      <DependentUpon>uConPatientInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs">
       <SubType>Form</SubType>
@@ -117,6 +191,9 @@
     <EmbeddedResource Include="Doctor\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\uCon\uConPatientInfo.resx">
+      <DependentUpon>uConPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LOGIN\FORGOT_PASSWORD_FORM_NEW_PASSWORD.resx">
       <DependentUpon>FORGOT_PASSWORD_FORM_NEW_PASSWORD.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +222,13 @@
     <EmbeddedResource Include="RECEPTIONIST\RECEPTIONIST_FORM.resx">
       <DependentUpon>RECEPTIONIST_FORM.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Data Layer\HospitalEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HospitalEntity1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data Layer\HospitalEntity.edmx.diagram">
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -163,11 +247,22 @@
     <None Include="Resources\LOGIN FORM.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data Layer\HospitalEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HospitalEntity.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data Layer\HospitalEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HospitalEntity1.cs</LastGenOutput>
+    </Content>
     <Content Include="NewFile1.txt" />
     <None Include="Resources\Logo%402x1.png" />
     <None Include="Resources\LOGO%402x.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

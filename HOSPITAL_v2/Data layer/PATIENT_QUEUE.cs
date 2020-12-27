@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HOSPITAL_v2.Data_layer
+namespace HOSPITAL_v2.Data_Layer
 {
     using System;
     using System.Collections.Generic;
